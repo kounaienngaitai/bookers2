@@ -1,6 +1,20 @@
-<h1>User詳細ページ</h1>
+<%= render 'books/info',user: User.find(params[:id]) %>
 
-<div>
-  <h3><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image(100,100) %>
-</div>
+<%= render 'users/newbook', book: Book.new %>
+
+<!----------------ユーザー投稿一覧--------------->
+
+<% @books.each do |book| %>
+
+  <%= link_to book_path(book.id) do %>
+    <%= image_tag @user.get_profile_image(100, 100) %>
+  <% end %>
+
+  <p>title</p>
+  <%= book.title %>
+  <p>opinion</p>
+  <%= book.body %>
+
+  <% end %>
+  </div>
+
