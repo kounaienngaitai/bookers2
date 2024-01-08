@@ -1,8 +1,17 @@
-<%= render 'books/info',user: @user %>
-<%= render 'books/newbook', book: Book.new %>
 
 
-<mein>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render 'books/info', user: @user %>
+<%= render 'books/newbook', book: @book_new %>
+</div>
 <div class="col-md-8 offset-md-1">
   <h2>Book detail</h2>
   <table class="table">

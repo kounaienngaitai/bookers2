@@ -1,6 +1,6 @@
 <div class="col-md-3">
   <h2>User info</h2>
-  <%= image_tag user.get_profile_image(100,100) %>
+<%= image_tag @user.get_profile_image(100,100) %>
   <table class="table">
     <tbody>
       <tr></tr>
@@ -15,5 +15,3 @@
   <div class="row">
     <%= link_to 'editボタン', edit_user_path(user.id) %>
   </div>
-</div>
-<br>
